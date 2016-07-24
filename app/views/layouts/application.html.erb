@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BallersWeb</title>
+    <title>Ballers</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
+    <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
   </head>
 
   <body>

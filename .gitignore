@@ -17,3 +17,6 @@
 .byebug_history
 
 /vendor
+# Added by webpack-rails
+/node_modules
+/public/webpack
