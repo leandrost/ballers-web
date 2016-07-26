@@ -6,8 +6,12 @@
     "start": "./node_modules/.bin/webpack-dev-server --config config/webpack.config.js"
   },
   "dependencies": {
+    "materialize-css": "^0.97.7",
+    "moment": "^2.14.1",
     "stats-webpack-plugin": "^0.2.1",
-    "webpack": "^1.9.11",
+    "webpack": "^1.9.11"
+  },
+  "devDependencies": {
     "webpack-dev-server": "^1.9.0"
   }
 }
