@@ -4,6 +4,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var StatsPlugin = require('stats-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+let extractCSS = new ExtractTextPlugin('[name].css');
 
 // must match config.webpack.dev_server.port
 var devServerPort = 3808;
@@ -14,7 +16,7 @@ var production = process.env.NODE_ENV === 'production';
 var config = {
   entry: {
     // Sources are expected to live in $app_root/webpack
-    'application': './webpack/application.js'
+    'application': './webpack/application.js',
   },
 
   output: {
@@ -29,10 +31,22 @@ var config = {
   },
 
   resolve: {
-    root: path.join(__dirname, '..', 'webpack')
+    root: path.join(__dirname, '..', 'webpack'),
+  },
+
+  devtool: "source-map",
+
+  module: {
+    loaders: [
+      {
+        test: /\.scss$/i,
+        loader: extractCSS.extract(['css','sass?sourceMap'])
+      }
+    ]
   },
 
   plugins: [
+    extractCSS,
     // must match config.webpack.manifest_filename
     new StatsPlugin('manifest.json', {
       // We only need assetsByChunkName

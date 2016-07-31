@@ -1,0 +1,18 @@
+@import 'foundation/core';
+@import 'base/colors';
+
+body {
+  background-color: #F5F5F5
+}
+
+header {
+  color: $white;
+
+  form {
+    @include grid-col(11);
+  }
+
+  .topbar-title {
+    @include grid-col(1);
+  }
+}
