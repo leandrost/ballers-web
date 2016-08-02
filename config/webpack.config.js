@@ -39,8 +39,15 @@ var config = {
   module: {
     loaders: [
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'file',
+        query: {
+          name: 'images/[name]-[hash].[ext]'
+        }
+      },
+      {
         test: /\.scss$/i,
-        loader: extractCSS.extract(['css','sass?sourceMap'])
+        loader: extractCSS.extract(['css', 'resolve-url', 'sass'])
       }
     ]
   },

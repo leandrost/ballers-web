@@ -1,18 +1,30 @@
 @import 'foundation/core';
 @import 'base/colors';
 
+@import url(//fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900);
+
 body {
-  background-color: #F5F5F5
+  background-color: #F5F5F5;
 }
 
 header {
   color: $white;
 
   form {
-    @include grid-col(11);
+    @include grid-col(10);
   }
 
-  .topbar-title {
+  .top-bar-title {
     @include grid-col(1);
+    background-image: url("~images/logo.svg");
+    background-repeat: none;
+    background-size: cover;
+    height: 32px;
+    width: 166px;
   }
+}
+
+section {
+  padding: 0.5rem;
+  @include grid-row();
 }
