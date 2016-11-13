@@ -30,7 +30,7 @@ bundle exec foreman start -f Procfile.development
 
 ### Test
 ```
-TODO
+bundle exec rspec
 ```
 
 ### Deploy
