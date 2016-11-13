@@ -165,6 +165,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  foreman (= 0.82)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
