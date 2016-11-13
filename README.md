@@ -1,24 +1,35 @@
-# README
+# ![Ballers](media/logo.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A basketball social network. Find basketball games near to you.
 
-Things you may want to cover:
+### Dependencies
+* `ruby`
+* `nodejs`
+* `bundle`
+* `yarn`
 
-* Ruby version
+### Configuration
+```
+bundle
+yarn
+```
 
-* System dependencies
+### Running
+```
+foreman start -f Procfile.development
+```
 
-* Configuration
+### Test
+```
+TODO
+```
 
-* Database creation
+### Deploy
+```
+TODO
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### License
+```
+MIT © [Leandro Thimóteo](https://github.com/leandrost)
+```
