@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactOnRails from 'react-on-rails';
+import React from "react";
+import ReactOnRails from "react-on-rails";
 
-import HelloWorld from '../containers/HelloWorld';
-import Map from '../containers/Map';
+import HelloWorld from "../containers/HelloWorld";
+import Map from "../containers/Map";
 
 const HelloWorldApp = (props) => (
   <HelloWorld {...props} />

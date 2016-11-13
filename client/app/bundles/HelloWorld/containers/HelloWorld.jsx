@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import HelloWorldWidget from '../components/HelloWorldWidget';
+import React, { PropTypes } from "react";
+import HelloWorldWidget from "../components/HelloWorldWidget";
 
 // Simple example of a React "smart" component
 export default class HelloWorld extends React.Component {

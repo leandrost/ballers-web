@@ -12,21 +12,21 @@
 #
 # For a complete list of options that you can use to customize hooks, see:
 # https://github.com/brigade/overcommit#configuration
-#
-# Uncomment the following lines to make the configuration take effect.
 
-#PreCommit:
+PreCommit:
+  ALL:
+    exclude: &default_excludes
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+      - 'config'
+      - 'Gemfile'
+    include:
+      - 'config/initializers/**/*'
   RuboCop:
     enabled: true
-    on_warn: fail # Treat all warnings as failures
-#
-#  TrailingWhitespace:
-#    exclude:
-#      - '**/db/structure.sql' # Ignore trailing whitespace in generated files
-#
-#PostCheckout:
-#  ALL: # Special hook name that customizes all hooks of this type
-#    quiet: true # Change all post-checkout hooks to only display output on failure
-#
-#  IndexTags:
-#    enabled: true # Generate a tags file with `ctags` each time HEAD changes
+    on_warn: fail
+  EsLint:
+    enabled: true
+    exclude: 'client/**/*.json'
+    include: 'client/**/*.js*'
+    required_executable: './client/node_modules/.bin/eslint'

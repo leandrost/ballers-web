@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from "react";
 
 import {
   withGoogleMap,
@@ -28,7 +28,7 @@ const AsyncGettingStartedExampleGoogleMap = withScriptjs(
   )
 );
 
-export default class Map extends React.Component {
+export default class Map extends Component {
   render() {
     const markers = [
       {
@@ -42,9 +42,9 @@ export default class Map extends React.Component {
       <div>
         <AsyncGettingStartedExampleGoogleMap
           googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp"
-          loadingElement={ <div style={{ height: `100%` }}>LOADING...</div> }
-          containerElement={ <div style={{ height: `450px` }} /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
+          loadingElement={ <div style={{ height: "100%" }}>LOADING...</div> }
+          containerElement={ <div style={{ height: "450px" }} /> }
+          mapElement={ <div style={{ height: "100%" }} /> }
           markers={markers}
         /> </div>
     );
