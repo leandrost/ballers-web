@@ -30,7 +30,6 @@ TODO
 ```
 
 ### License
-```
+
 Copyright (c) 2016 Leandro Thimóteo
 Licensed under the MIT license.
-```
