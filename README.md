@@ -31,5 +31,6 @@ TODO
 
 ### License
 ```
-MIT © [Leandro Thimóteo](https://github.com/leandrost)
+Copyright (c) 2016 Leandro Thimóteo
+Licensed under the MIT license.
 ```
