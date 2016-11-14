@@ -9,12 +9,12 @@ const config = {
     "es5-shim/es5-shim",
     "es5-shim/es5-sham",
     "babel-polyfill",
-    path.resolve("./client/app/bundles/HelloWorld/startup/HelloWorldApp"),
+    //"./app/bundles/HelloWorld/startup/HelloWorldApp",
   ],
 
   output: {
     filename: "webpack-bundle.js",
-    path: "app/assets/webpack",
+    path: "../app/assets/webpack",
   },
 
   resolve: {
@@ -50,6 +50,7 @@ const config = {
 module.exports = config;
 
 if (devBuild) {
+  console.log(path.resolve( __dirname, 'path', 'to', 'mydir' ));
   console.log("Webpack dev build for Rails"); // eslint-disable-line no-console
   module.exports.devtool = "eval-source-map";
 } else {

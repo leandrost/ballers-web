@@ -27,6 +27,6 @@ PreCommit:
     on_warn: fail
   EsLint:
     enabled: true
-    exclude: 'client/**/*.json'
-    include: 'client/**/*.js*'
-    required_executable: './client/node_modules/.bin/eslint'
+    exclude: '**/*.json'
+    include: '**/*.js*'
+    required_executable: 'node_modules/.bin/eslint'
