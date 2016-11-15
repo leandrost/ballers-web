@@ -1,2 +1,2 @@
 <h1>Courts</h1>
-<%= react_component("Map", props: {}, prerender: false) %>
+<%= react_component("Map", props: { googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{ENV["GOOGLE_MAPS_API_KEY"]}" } , prerender: false) %>

@@ -37,11 +37,10 @@ export default class Map extends Component {
         defaultAnimation: 2,
       }
     ];
-
     return (
       <div>
         <AsyncGettingStartedExampleGoogleMap
-          googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp"
+          googleMapURL={this.props.googleMapURL}
           loadingElement={ <div style={{ height: "100%" }}>LOADING...</div> }
           containerElement={ <div style={{ height: "450px" }} /> }
           mapElement={ <div style={{ height: "100%" }} /> }
