@@ -11,22 +11,22 @@ A basketball social network. Find basketball games near to you.
 * [`Yarn`](https://yarnpkg.com/)
 
 ### Getting Started
-Clone this repo:
-```
-git clone git@github.com:leandrost/ballers-web.git
-```
-Install Ruby dependencies:
-```
-bundle install
-```
-Install JavaScript dependencies:
-```
-yarn install
-```
-Setup Database
-```
-bundle exec rake db:setup
-```
+1. Clone this repo:
+  ```
+  git clone git@github.com:leandrost/ballers-web.git
+  ```
+2. Install Ruby dependencies:
+  ```
+  bundle install
+  ```
+3. Install JavaScript dependencies:
+  ```
+  yarn install
+  ```
+4. Setup Database
+  ```
+  bundle exec rake db:setup
+  ```
 
 ### Running
 ```
@@ -40,7 +40,7 @@ bundle exec rspec
 
 ### Deploy
 ```
-TODO
+git push heroku master
 ```
 
 ### License
