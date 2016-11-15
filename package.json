@@ -2,7 +2,7 @@
   "name": "ballers",
   "version": "0.0.1",
   "engines": {
-    "node": "5.10.0",
+    "node": "6.9.1",
     "yarn": "0.16.1"
   },
   "scripts": {
