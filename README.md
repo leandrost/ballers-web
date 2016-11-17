@@ -6,7 +6,7 @@ A basketball social network. Find basketball games near to you.
 * `Git`
 * `Ruby 2.3.x`
 * `Nodejs 6.9.x LTS`
-* `Postgres 9.5.x`
+* `Mongo DB 3.2.x`
 * [`Bundler 1.12.x`](http://bundler.io/)
 * [`Yarn`](https://yarnpkg.com/)
 
@@ -22,10 +22,6 @@ A basketball social network. Find basketball games near to you.
 3. Install JavaScript dependencies:
   ```
   yarn install
-  ```
-4. Setup Database
-  ```
-  bundle exec rake db:setup
   ```
 
 ### Running

@@ -1,2 +1,27 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Courts</h1>
+
+<%= link_to "New Court", new_court_path %>
+<br>
 <%= react_component("Map", props: { googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{ENV["GOOGLE_MAPS_API_KEY"]}" } , prerender: false) %>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courts.each do |court| %>
+      <tr>
+        <td><%= court.name %></td>
+        <td><%= court.address %></td>
+        <td><%= link_to 'Show', court %></td>
+        <td><%= link_to 'Edit', edit_court_path(court) %></td>
+        <td><%= link_to 'Destroy', court, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+   <% end %>
+  </tbody>
+</table>

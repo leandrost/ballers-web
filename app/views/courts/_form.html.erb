@@ -1,0 +1,41 @@
+<%= form_for(court) do |f| %>
+  <% if court.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(court.errors.count, "error") %> prohibited this court from being saved:</h2>
+
+      <ul>
+      <% court.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <%= f.fields_for :coordinates do |c| %>
+
+    <div class="field">
+      <%= c.label :latitude %>
+      <%= c.number_field :latitude, step: :any %>
+    </div>
+
+    <div class="field">
+      <%= c.label :longitude %>
+      <%= c.number_field :longitude, step: :any  %>
+    </div>
+
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -13,5 +13,8 @@ module BallersWeb
     # -- all .rb files in that directory are automatically loaded.
     config.generators.assets = false
     config.generators.helper = false
+    config.active_record.raise_in_transactional_callbacks = true
+    Mongoid.load!("./config/mongoid.yml")
+    config.generators { |g| g.orm :mongoid }
   end
 end

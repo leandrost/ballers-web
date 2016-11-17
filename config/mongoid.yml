@@ -1,0 +1,25 @@
+# https://github.com/mongodb/mongoid/blob/master/lib/rails/generators/mongoid/config/templates/mongoid.yml
+development:
+  clients:
+    default:
+      database: ballers_development
+      hosts:
+        - localhost:27017
+
+test:
+  clients:
+    default:
+      database: ballers_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+      options:
+        connect_timeout: 15
