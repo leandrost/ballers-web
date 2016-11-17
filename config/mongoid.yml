@@ -2,16 +2,12 @@
 development:
   clients:
     default:
-      database: ballers_development
-      hosts:
-        - localhost:27017
+      uri: <%= ENV['MONGODB_URI'] %>
 
 test:
   clients:
     default:
-      database: ballers_test
-      hosts:
-        - localhost:27017
+      uri: <%= ENV['MONGODB_URI'] %>
       options:
         read:
           mode: :primary
