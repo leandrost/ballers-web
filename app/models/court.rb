@@ -5,7 +5,7 @@ class Court
   field :address, type: String
   field :coordinates, type: Point
 
-  def initialize(args)
+  def initialize(args=nil)
     super(args)
     @coordinates = Point.new(@coordinates) unless @coordinates.is_a?(Point)
   end
