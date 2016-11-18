@@ -9,7 +9,7 @@ const config = {
     "es5-shim/es5-shim",
     "es5-shim/es5-sham",
     "babel-polyfill",
-    path.resolve("./client/app/bundles/HelloWorld/startup/HelloWorldApp"),
+    path.resolve("./client/app/index"),
   ],
 
   output: {
@@ -29,6 +29,7 @@ const config = {
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(nodeEnv),
+        GOOGLE_MAPS_API_KEY: JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
       },
     }),
   ],

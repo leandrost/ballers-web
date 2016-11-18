@@ -4,7 +4,7 @@
 
 <%= link_to "New Court", new_court_path %>
 <br>
-<%= react_component("Map", props: { googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=#{ENV["GOOGLE_MAPS_API_KEY"]}" } , prerender: false) %>
+<%= react_component("Map") %>
 
 <table>
   <thead>
