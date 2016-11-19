@@ -26,6 +26,7 @@ A basketball social network. Find basketball games near to you.
 
 ### Running
 ```
+source .env
 bundle exec foreman start -f Procfile.development
 ```
 

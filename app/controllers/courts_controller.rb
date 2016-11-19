@@ -3,7 +3,7 @@ class CourtsController < ApplicationController
 
   # GET /courts
   def index
-    @courts = Court.all
+    @presenter = set_presenter
   end
 
   # GET /courts/1
@@ -60,5 +60,20 @@ class CourtsController < ApplicationController
       :address,
       coordinates: [:latitude, :longitude]
     )
+  end
+
+  def set_presenter
+    courts = Court.all.to_a
+    markers = courts.map do |court|
+      {
+        key: court.id.to_s,
+        position: {
+          lat: court.coordinates[:latitude].to_f || 0,
+          lng: court.coordinates[:longitude].to_f || 0
+        },
+        defaultAnimation: 2,
+      }
+    end
+    OpenStruct.new(courts: courts, markers: markers)
   end
 end

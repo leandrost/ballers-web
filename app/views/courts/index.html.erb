@@ -4,7 +4,7 @@
 
 <%= link_to "New Court", new_court_path %>
 <br>
-<%= react_component("Map") %>
+<%= react_component("Map", props: { markers: @presenter.markers }) %>
 
 <table>
   <thead>
@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @courts.each do |court| %>
+    <% @presenter.courts.each do |court| %>
       <tr>
         <td><%= court.name %></td>
         <td><%= court.address %></td>

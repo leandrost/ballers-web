@@ -8,13 +8,14 @@ import {
 
 import googleMapsLoader from "react-google-maps-loader";
 
-const Baskeire = { lat: -22.8803052, lng: -43.3749589 };
+const RJ = { lat: -22.9068467, lng: -43.17289649999998 };
+
 const GoogleMapContainer = withGoogleMap(
   props => (
       <GoogleMap
         ref={props.onMapLoad}
-        defaultZoom={16}
-        defaultCenter={Baskeire}
+        defaultZoom={11}
+        defaultCenter={RJ}
         onClick={props.onMapClick}
       >
         {props.markers.map(marker => (
@@ -25,20 +26,17 @@ const GoogleMapContainer = withGoogleMap(
 );
 
 class Map extends Component {
+  static propTypes = {
+    markers: React.PropTypes.array.isRequired,
+  };    
+
   render() {
-    const markers = [
-      {
-        key: "2",
-        position: Baskeire,
-        defaultAnimation: 2,
-      }
-    ];
     return (
       <GoogleMapContainer
         loadingElement={ <div style={{ height: "100%" }}>LOADING...</div> }
         containerElement={ <div style={{ height: "450px" }} /> }
         mapElement={ <div style={{ height: "100%" }} /> }
-        markers={markers}
+        markers={this.props.markers}
       />
     );
   }

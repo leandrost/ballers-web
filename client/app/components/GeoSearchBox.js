@@ -4,7 +4,7 @@ import GooglePlacesSuggest from "react-google-places-suggest";
 
 class GeoSearchBox extends Component {
   state = {
-    search: "",
+    search: "Brazil",
     latitude: 0,
     longitude: 0
   }
