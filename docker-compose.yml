@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    container_name: ballers-db
+    image: mongo
+    ports:
+      - "27017:27017"
+  web:
+    build: .
+    container_name: ballers-web
+    command: bundle exec foreman start -f Procfile.development
+    env_file: .env
+    volumes:
+      - .:/ballers
+    ports:
+      - "3000:3000"
+    links:
+      - db
