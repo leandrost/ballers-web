@@ -68,8 +68,8 @@ class CourtsController < ApplicationController
       {
         key: court.id.to_s,
         position: {
-          lat: court.coordinates[:latitude].to_f || 0,
-          lng: court.coordinates[:longitude].to_f || 0
+          lat: court.coordinates.latitude.to_f,
+          lng: court.coordinates.longitude.to_f
         },
         defaultAnimation: 2,
       }

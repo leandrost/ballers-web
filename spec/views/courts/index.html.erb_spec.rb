@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "courts/index", type: :view do
+  let(:presenter) { OpenStruct.new(courts: [], markers: []) }
+
   before(:each) do
-    assign(:courts, [
-      Court.create!(),
-      Court.create!()
-    ])
+    assign(:presenter, presenter)
   end
 
   it "renders a list of courts" do

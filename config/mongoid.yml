@@ -2,12 +2,12 @@
 development:
   clients:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
+      uri: <%= "#{ENV['MONGODB_URI']}_development" %>
 
 test:
   clients:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
+      uri: <%= "#{ENV['MONGODB_URI']}_test" %>
       options:
         read:
           mode: :primary

@@ -5,7 +5,7 @@ RSpec.describe "courts/edit", type: :view do
     @court = assign(:court, Court.create!())
   end
 
-  it "renders the edit court form" do
+  xit "renders the edit court form" do
     render
 
     assert_select "form[action=?][method=?]", court_path(@court), "post" do
