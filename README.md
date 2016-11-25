@@ -1,6 +1,8 @@
-# ![Ballers](media/logo.png)
+![Ballers](media/logo.png)
 
 A basketball social network. Find basketball games near to you.
+#
+[![Build Status](https://semaphoreci.com/api/v1/leandrost/ballers-web/branches/master/shields_badge.svg)](https://semaphoreci.com/leandrost/ballers-web)
 
 ### Prerequisites
 * `Git`
