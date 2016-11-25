@@ -1,4 +1,4 @@
-FROM ruby:2.3.2
+FROM ruby:2.3.3
 
 RUN set -ex \
   && for key in \
