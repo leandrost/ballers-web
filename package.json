@@ -10,7 +10,7 @@
     "build:production": "NODE_ENV=production webpack --config client/webpack.config.js",
     "build:development": "webpack -w --config client/webpack.config.js",
     "start": "yarn run build:development",
-    "test": "node_modules/.bin/mocha -r jsdom-global/register --require babel-register client/**/*.spec.js"
+    "test": "node_modules/.bin/mocha --require babel-register client/**/*.spec.js"
   },
   "cacheDirectories": [
     "node_modules"
