@@ -25,6 +25,7 @@ const config = {
       "react-google-maps": path.resolve("./node_modules/react-google-maps/lib"),
     },
   },
+
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
@@ -33,6 +34,7 @@ const config = {
       },
     }),
   ],
+
   module: {
     loaders: [
       {
@@ -45,6 +47,12 @@ const config = {
         exclude: /node_modules/,
       },
     ],
+  },
+
+  externals: {
+    "react/addons": true,
+    "react/lib/ExecutionEnvironment": true,
+    "react/lib/ReactContext": true
   },
 };
 

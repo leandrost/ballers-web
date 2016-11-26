@@ -25,10 +25,10 @@ const GoogleMapContainer = withGoogleMap(
   )
 );
 
-class Map extends Component {
+export class Map extends Component {
   static propTypes = {
-    markers: React.PropTypes.array.isRequired,
-  };    
+    markers: React.PropTypes.array,
+  };
 
   render() {
     return (
