@@ -9,7 +9,7 @@ const config = {
     "es5-shim/es5-shim",
     "es5-shim/es5-sham",
     "babel-polyfill",
-    path.resolve("./client/app/index"),
+    path.resolve("client/app.js"),
   ],
 
   output: {
@@ -45,6 +45,14 @@ const config = {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass"
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
       },
     ],
   },

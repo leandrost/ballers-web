@@ -1,8 +1,29 @@
 engines:
-  rubocop:
+  brakeman:
     enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - ruby
+        - javascript
   eslint:
     channel: "eslint-3"
     config:
       config: ".eslintrc.js"
+      extensions:
+        - .es6
+        - .js
+        - .jsx
     enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+    - "app/**/*"
+    - "lib/**/*"
+    - "client/**/*"
+    - "**.rb"
+    - "**.js"
+    - "**.jsx"
+    - "**.es6"

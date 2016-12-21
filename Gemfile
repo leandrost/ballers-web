@@ -11,6 +11,9 @@ gem 'turbolinks', '~> 5'
 
 gem 'react_on_rails', '~> 6'
 gem 'mongoid', "~> 6"
+gem 'mongoid-geospatial', require: 'mongoid/geospatial'
+
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug', platform: :mri

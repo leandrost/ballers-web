@@ -3,7 +3,7 @@ import { shallow } from "enzyme";
 import { expect } from "chai";
 import jsdom from "jsdom";
 
-import { Map } from "../app/components/Map";
+import { Map } from "../components/Map";
 
 describe("<Map/>", function () {
 

@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<header>
+  <p id="notice"><%= notice %></p>
+  <h1>Courts</h1>
+  <%= react_component "LocationSearch", props: { action: courts_path } %>
+  <br>
+  <%= link_to "New Court", new_court_path %>
+  <br>
+</header>
 
-<h1>Courts</h1>
-
-<%= link_to "New Court", new_court_path %>
-<br>
-<%= react_component("Map", props: { markers: @presenter.markers }) %>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @presenter.courts.each do |court| %>
+<main>
+  <section>
+    <%= react_component("Map", props: { markers: @presenter.markers }) %>
+  </section>
+  <table>
+    <thead>
       <tr>
-        <td><%= court.name %></td>
-        <td><%= court.address %></td>
-        <td><%= link_to 'Show', court %></td>
-        <td><%= link_to 'Edit', edit_court_path(court) %></td>
-        <td><%= link_to 'Destroy', court, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="5"></th>
       </tr>
-   <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @presenter.courts.each do |court| %>
+        <tr>
+          <td><%= court.name %></td>
+          <td><%= court.address %></td>
+          <td><%= link_to 'Show', court %></td>
+          <td><%= link_to 'Edit', edit_court_path(court) %></td>
+          <td><%= link_to 'Destroy', court, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+     <% end %>
+    </tbody>
+  </table>
+</main>

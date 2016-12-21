@@ -12,24 +12,25 @@ A basketball social network. Find basketball games near to you.
 * [`Bundler 1.12.x`](http://bundler.io/)
 * [`Yarn`](https://yarnpkg.com/)
 
+### Quirk Start
+  ```
+  docker-compose up
+  ```
+
 ### Getting Started
 1. Clone this repo:
   ```
   git clone git@github.com:leandrost/ballers-web.git
   ```
-2. Install Ruby dependencies:
+2. Setup the application:
   ```
-  bundle install
-  ```
-3. Install JavaScript dependencies:
-  ```
-  yarn install
+  bin/setup
   ```
 
 ### Running
 ```
 source .env
-bundle exec foreman start -f Procfile.development
+bundle exec foreman start
 ```
 
 ### Test

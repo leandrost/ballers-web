@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-import googleMapsLoader from "react-google-maps-loader";
+import GoogleMapsLoader from "react-google-maps-loader";
 import GooglePlacesSuggest from "react-google-places-suggest";
 
 class GeoSearchBox extends Component {
+  static propTypes = {
+    googleMaps: React.PropTypes.object,
+  };
+
   state = {
-    search: "Brazil",
+    search: "",
     latitude: 0,
     longitude: 0
   }
@@ -13,9 +17,9 @@ class GeoSearchBox extends Component {
     this.setState({ search: e.target.value });
   }
 
-  handleSelectSuggest = (suggestName, coordinate) => {
+  handleSelectSuggest = (suggest, coordinate) => {
     this.setState({
-      search: suggestName,
+      search: suggest.description,
       latitude: coordinate.latitude,
       longitude: coordinate.longitude,
     });
@@ -23,14 +27,19 @@ class GeoSearchBox extends Component {
 
   render() {
     const { search, latitude, longitude } = this.state;
+    const { googleMaps } = this.props;
     return (
       <div>
-        <GooglePlacesSuggest onSelectSuggest={ this.handleSelectSuggest } search={ search }>
+        <GooglePlacesSuggest
+          googleMaps={ googleMaps }
+          onSelectSuggest={ this.handleSelectSuggest }
+          search={ search }>
           <input
             name="court[address]"
             type="text"
             value={ search }
             placeholder="Search a location"
+            autoComplete="off"
             onChange={ this.handleSearchChange }
           />
         </GooglePlacesSuggest>
@@ -53,7 +62,7 @@ class GeoSearchBox extends Component {
   }
 }
 
-export default googleMapsLoader(GeoSearchBox, {
+export default GoogleMapsLoader(GeoSearchBox, {
   libraries: ["places", "geometry"],
   key: process.env.GOOGLE_MAPS_API_KEY
 });

@@ -23,6 +23,7 @@ PreCommit:
     include:
       - 'config/initializers/**/*'
   RuboCop:
+    command: ['bundle', 'exec', 'rubocop']
     enabled: true
     on_warn: fail
   EsLint:

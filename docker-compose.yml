@@ -8,7 +8,7 @@ services:
   web:
     build: .
     container_name: ballers-web
-    command: bundle exec foreman start -f Procfile.development
+    command: "bin/foreman start -f Procfile.development"
     env_file: .env
     volumes:
       - .:/ballers

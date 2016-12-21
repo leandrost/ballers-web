@@ -6,7 +6,10 @@ AllCops:
 
 Metrics/LineLength:
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#80-character-limits"
-  Max: 120
+  Max: 80
+
+SpaceAroundEqualsInParameterDefault:
+  Enabled: false
 
 Style/Alias:
   EnforcedStyle: "prefer_alias_method"

@@ -3,12 +3,22 @@ class CourtsController < ApplicationController
 
   # GET /courts
   def index
-    @presenter = set_presenter
+    location = if params[:nearby].present?
+                 nearby_location
+               elsif [:latitude, :longitude].all? { |s| params.key?(s) }
+                 params.slice(:latitude, :longitude)
+               end
+    assign_presenter(location.present? ? Court.near_by(location) : Court.all)
+  end
+
+  def nearby_location
+    result = Geocoder.search(params[:nearby])
+    return nil if result.blank?
+    result.first.geometry["location"]
   end
 
   # GET /courts/1
-  def show
-  end
+  def show; end
 
   # GET /courts/new
   def new
@@ -16,8 +26,7 @@ class CourtsController < ApplicationController
   end
 
   # GET /courts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /courts
   def create
@@ -31,21 +40,17 @@ class CourtsController < ApplicationController
 
   # PATCH/PUT /courts/1
   def update
-    respond_to do |format|
-      if @court.update(court_params)
-        format.html { redirect_to @court, notice: "Court was successfully updated." }
-      else
-        format.html { render :edit }
-      end
+    if @court.update(court_params)
+      redirect_to @court, notice: "Court was successfully updated."
+    else
+      render :edit
     end
   end
 
   # DELETE /courts/1
   def destroy
     @court.destroy
-    respond_to do |format|
-      format.html { redirect_to courts_url, notice: "Court was successfully destroyed." }
-    end
+    redirect_to courts_url, notice: "Court was successfully destroyed."
   end
 
   private
@@ -62,18 +67,14 @@ class CourtsController < ApplicationController
     )
   end
 
-  def set_presenter
-    courts = Court.all.to_a
-    markers = courts.map do |court|
+  def assign_presenter(courts)
+    markers = courts.to_a.map do |court|
       {
         key: court.id.to_s,
-        position: {
-          lat: court.coordinates.latitude.to_f,
-          lng: court.coordinates.longitude.to_f
-        },
-        defaultAnimation: 2,
+        position: { lat: court.latitude, lng: court.longitude },
+        defaultAnimation: 2
       }
     end
-    OpenStruct.new(courts: courts, markers: markers)
+    @presenter = OpenStruct.new(courts: courts, markers: markers)
   end
 end
